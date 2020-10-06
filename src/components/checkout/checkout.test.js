@@ -6,8 +6,14 @@ import Checkout from './checkout';
 describe('Teste do componente checkout', () => {
 
    it('deve renderizar o componente sem erros', () =>{
-      const { getByText } = render(<Checkout />);
-      const texto = getByText(/checkout/i);
-      expect(texto).toBeInTheDocument();
+      const { getAllByText } = render(
+      <Checkout
+         visivel={exibirCheckout}
+         handleExibirProdutos={handleExibirProdutos}
+         total={total}
+         produtos={carrinho}
+         handleLimparCarrinho={handleLimparCarrinho} />);
+      const textos = getAllByText(/Finalizar compra/i);
+      expect(textos[0]).toBeInTheDocument();
    });
 });
