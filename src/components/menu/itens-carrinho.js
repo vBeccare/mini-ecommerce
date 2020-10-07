@@ -18,7 +18,7 @@ function ItensCarrinho(props) {
          );
       }
       const itens = props.produtos.map( produto => 
-         <NavDropdown.Item href='' key={'produto.nome'} data-testid={produto.nome}>
+         <NavDropdown.Item href='' key={produto.nome} data-testid={produto.nome}>
             {produto.nome} - {produto.quantidade} x {produto.preco}
          </NavDropdown.Item>
          );
